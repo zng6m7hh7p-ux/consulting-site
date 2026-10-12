@@ -10,6 +10,7 @@
 <meta property="og:url" content="https://daniellemccurdyconsulting.com/">
 <meta property="og:title" content="Danielle McCurdy Consulting">
 <meta property="og:description" content="Finance that holds up to scrutiny. Fractional finance transformation and controls, one to two days a week.">
+<meta property="og:image" content="https://daniellemccurdyconsulting.com/danielle-mccurdy.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A2F41'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='600' fill='%23F5F7F7'%3EDM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -97,6 +98,10 @@ section:first-of-type{border-top:0}
 
 /* hero */
 .hero{padding-block:4.5rem 3.75rem}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(13rem,17rem);gap:2.5rem 3.5rem;align-items:start}
+.hero-text{min-width:0}
+.portrait{margin:0;min-width:0;align-self:end}
+.portrait img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
 .hero h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.08;letter-spacing:-.015em;max-width:32rem}
 .hero .lede{margin-top:1.5rem;font-size:1.16rem;color:var(--ink);max-width:40rem}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
@@ -109,7 +114,7 @@ section:first-of-type{border-top:0}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
 .btn.ghost:hover,.btn.ghost:focus-visible{background:transparent;color:var(--accent);border-color:var(--accent)}
 .creds{
-  margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  grid-column:1/-1;margin-top:.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;
   font-family:"IBM Plex Mono",ui-monospace,monospace;
   font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
@@ -136,6 +141,13 @@ section:first-of-type{border-top:0}
   color:var(--accent);margin-top:.3rem;
 }
 .item p{font-size:.95rem;color:var(--ink-soft);min-width:0}
+.quotes{margin-top:2.5rem;padding-top:2.25rem;border-top:1px solid var(--rule);display:grid;gap:2rem}
+.quotes blockquote{margin:0;max-width:42rem;padding-left:1.25rem;border-left:2px solid var(--accent)}
+.quotes blockquote p{font-family:Spectral,Georgia,serif;font-size:1.18rem;line-height:1.45;color:var(--ink)}
+.quotes .attrib{
+  margin-top:.9rem;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+}
 
 /* compliance */
 .panel{
@@ -199,6 +211,8 @@ footer .wrap{
 @media (max-width:40rem){
   .sec{padding-block:2.75rem}
   .hero{padding-block:3rem}
+  .hero .wrap{grid-template-columns:1fr;gap:2rem}
+  .portrait{max-width:15rem;align-self:start}
   .item{grid-template-columns:1fr;gap:.5rem}
   .panel{padding:1.4rem}
 }
@@ -221,19 +235,21 @@ footer .wrap{
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">London &middot; UK and US engagements</p>
-    <h1>Finance that holds up to scrutiny.</h1>
-    <p class="lede">I join growing, listed and PE-backed businesses as a fractional member of the finance leadership team. ERP programmes taken through go-live, controls that survive an audit, and a finance team that can run the new process once I leave. Usually one to two days a week.</p>
-    <div class="actions">
-      <a class="btn" href="#contact">Start a conversation</a>
-      <a class="btn ghost" href="#help">See what I do</a>
+    <div class="hero-text">
+      <p class="eyebrow">London &middot; UK and US engagements</p>
+      <h1>Finance that holds up to scrutiny.</h1>
+      <p class="lede">I join growing, listed, PE-backed and not-for-profit organisations as a fractional member of the finance leadership team. ERP programmes taken through go-live, and controls that survive an audit. When I leave, the finance team can run the process without me. Usually one to two days a week.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn ghost" href="#help">See what I do</a>
+      </div>
     </div>
+    <figure class="portrait"><img src="danielle-mccurdy.jpg" alt="Danielle McCurdy" width="720" height="835"></figure>
     <div class="creds">
       <span>Nearly 20 years</span>
       <span>PwC &amp; Grant Thornton trained</span>
       <span>Euronext and NASDAQ environments</span>
       <span>MBA</span>
-      <span>Outside IR35</span>
     </div>
   </div>
 </section>
@@ -298,9 +314,15 @@ footer .wrap{
         <p>Business advisory and business improvement across three countries, including the finance operations manual for a shared services function aligned to a new finance system.</p>
       </div>
       <div class="item">
-        <h3>Current engagements<span>Since February 2025</span></h3>
-        <p>Concurrent client work through Danielle McCurdy Consulting Ltd for US not-for-profits in the education sector and a US not-for-profit providing accounting services, covering controls uplift, process documentation, reconciliation redesign and audit readiness.</p>
+        <h3>Current clients<span>Since February 2025</span></h3>
+        <p>US not-for-profits in the education sector and a US not-for-profit providing accounting services: Controls uplift, process documentation, reconciliation redesign and audit readiness.</p>
       </div>
+    </div>
+    <div class="quotes">
+      <blockquote>
+        <p>&ldquo;Danielle helped me immensely during my time as Project Director at Banijay UK. She has a great ability to build trusting working relationships with stakeholders and peers, which other than getting the job done, helps foster an open and collaborative culture.&rdquo;</p>
+        <p class="attrib">Emma Jenkinson, Project Director, Banijay UK</p>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -308,10 +330,10 @@ footer .wrap{
 <section id="compliance">
   <div class="wrap sec">
     <p class="eyebrow">Workforce compliance</p>
-    <h2 style="font-size:clamp(1.5rem,4vw,2rem);max-width:30rem;line-height:1.15">Menopause action plans and gender pay gap reporting</h2>
+    <h2 style="font-size:clamp(1.5rem,4vw,2rem);max-width:30rem;line-height:1.15">Gender pay gap reporting and menopause action plans</h2>
     <div class="panel">
       <p>From April 2026, employers with 250 or more staff can publish a menopause action plan voluntarily alongside their gender pay gap data. From spring 2027 it becomes a legal requirement under the Employment Rights Act 2025, with at least one action drawn from the menopause category and one from the gender pay gap categories.</p>
-      <p>Most employers in that bracket have no plan, no named owner, and no governance behind the figures they already publish. I build the plan, the reporting process and the evidence trail behind it, which is the same controls discipline applied to workforce data rather than financial data.</p>
+      <p>Few employers in that bracket have a plan yet, or anyone who owns it, and the figures they already publish rarely have governance behind them. I build the plan and the reporting process, with an evidence trail behind both. It's the same controls discipline applied to workforce data instead of financial data.</p>
       <p>The coaching credentials sit alongside the finance background, so the content of the plan stands up as well as the process around it:</p>
       <ul class="certs">
         <li><b>Certified Menopause Coach</b>, Menopause Movement UK</li>
@@ -361,7 +383,7 @@ footer .wrap{
   <div class="wrap sec">
     <p class="eyebrow">Contact</p>
     <h2 style="font-size:clamp(1.5rem,4vw,2rem);max-width:28rem;line-height:1.15">Tell me where the programme is stuck.</h2>
-    <p class="lede" style="margin-top:1rem">If I am not the right person for it, I will say so and point you at someone who is.</p>
+    <p class="lede" style="margin-top:1rem">If I'm not the right person for it, I'll say so and point you at someone who is.</p>
     <div class="lines">
       <div class="line">
         <span class="k">Email</span>
@@ -384,7 +406,6 @@ footer .wrap{
   <div class="wrap">
     <span>Danielle McCurdy Consulting Ltd</span>
     <span>London</span>
-    <span>Outside IR35</span>
   </div>
 </footer>
 
