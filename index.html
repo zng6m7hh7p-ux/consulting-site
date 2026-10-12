@@ -1,0 +1,398 @@
+<title>Danielle McCurdy Consulting</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single column, left-aligned measure on a ruled ledger grid; figures and labels set in mono */
+:root{
+  --paper:#F5F7F7;
+  --raised:#FFFFFF;
+  --ink:#0A2F41;
+  --ink-soft:#4C6A76;
+  --rule:#D3DCDC;
+  --accent:#8A5527;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1317;
+    --raised:#101D23;
+    --ink:#E7EDED;
+    --ink-soft:#9BB0B6;
+    --rule:#20343B;
+    --accent:#D79355;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1317;
+  --raised:#101D23;
+  --ink:#E7EDED;
+  --ink-soft:#9BB0B6;
+  --rule:#20343B;
+  --accent:#D79355;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  margin:0;
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:62rem;margin:0 auto;padding-inline:1.25rem}
+h1,h2,h3{font-family:Spectral,Georgia,"Times New Roman",serif;font-weight:600;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+
+/* masthead */
+.masthead{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule);
+}
+.masthead .wrap{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;
+  align-items:baseline;justify-content:space-between;
+  padding-block:.85rem;
+}
+.mast-name{font-family:Spectral,Georgia,serif;font-size:1.05rem;font-weight:600;letter-spacing:.01em}
+.mast-name span{
+  display:block;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.66rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-top:.15rem;
+}
+.mast-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.15rem;font-size:.84rem}
+.mast-nav a{color:var(--ink-soft);text-decoration:none;padding-block:.15rem}
+.mast-nav a:hover,.mast-nav a:focus-visible{color:var(--ink);text-decoration:underline;text-underline-offset:.25em}
+
+/* shared section furniture */
+section{border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.sec{padding-block:3.5rem}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1rem;
+}
+.lede{font-size:1.1rem;color:var(--ink-soft);max-width:38rem}
+
+/* hero */
+.hero{padding-block:4.5rem 3.75rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.08;letter-spacing:-.015em;max-width:32rem}
+.hero .lede{margin-top:1.5rem;font-size:1.16rem;color:var(--ink);max-width:40rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+.btn{
+  font-family:"IBM Plex Sans",sans-serif;font-size:.92rem;font-weight:500;
+  text-decoration:none;padding:.7rem 1.4rem;border:1px solid var(--ink);
+  background:var(--ink);color:var(--paper);
+}
+.btn:hover,.btn:focus-visible{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover,.btn.ghost:focus-visible{background:transparent;color:var(--accent);border-color:var(--accent)}
+.creds{
+  margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* services */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.25rem;margin-top:2.25rem}
+.col{min-width:0}
+.col h3{font-size:1.2rem;padding-bottom:.65rem;border-bottom:2px solid var(--accent)}
+.col ul{list-style:none;margin:.9rem 0 0;padding:0;font-size:.94rem}
+.col li{padding-block:.42rem;border-bottom:1px solid var(--rule);color:var(--ink-soft)}
+
+/* track record */
+.record{margin-top:2.25rem;display:grid;gap:0}
+.item{
+  display:grid;grid-template-columns:minmax(12rem,15rem) 1fr;gap:.35rem 2.5rem;
+  padding-block:1.4rem;border-top:1px solid var(--rule);
+}
+.item:first-child{border-top:0;padding-top:0}
+.item h3{font-size:1.05rem;min-width:0}
+.item h3 span{
+  display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.68rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin-top:.3rem;
+}
+.item p{font-size:.95rem;color:var(--ink-soft);min-width:0}
+
+/* compliance */
+.panel{
+  margin-top:2rem;background:var(--raised);border:1px solid var(--rule);
+  padding:2rem;display:grid;gap:1.1rem;
+}
+.panel p{max-width:44rem;font-size:.97rem}
+.certs{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.9rem;color:var(--ink-soft);max-width:44rem}
+.certs li{padding-left:1.1rem;position:relative}
+.certs li::before{content:"";position:absolute;left:0;top:.68em;width:.45rem;height:1px;background:var(--accent)}
+.certs b{font-weight:600;color:var(--ink)}
+.panel .who{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.74rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
+  padding-top:1.1rem;border-top:1px solid var(--rule);
+}
+
+/* engagement */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.25rem;margin-top:2.25rem}
+.tier{background:var(--raised);border:1px solid var(--rule);padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.tier h3{font-size:1.08rem}
+.tier p{font-size:.92rem;color:var(--ink-soft);flex:1}
+.price{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;
+  font-size:1rem;font-weight:500;color:var(--ink);
+  padding-top:.8rem;border-top:1px solid var(--rule);
+}
+.note{margin-top:1.5rem;font-size:.86rem;color:var(--ink-soft);max-width:40rem}
+
+/* contact */
+.lines{margin-top:2rem;display:grid;gap:0;max-width:40rem}
+.line{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;
+  padding-block:1rem;border-top:1px solid var(--rule);
+}
+.line:first-child{border-top:0}
+.line .k{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  flex:0 0 5.5rem;
+}
+.line .v{font-size:1rem;min-width:0;overflow-wrap:anywhere}
+#copy{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--rule);color:var(--ink-soft);
+  padding:.3rem .6rem;cursor:pointer;
+}
+#copy:hover,#copy:focus-visible{border-color:var(--accent);color:var(--accent)}
+
+footer{border-top:1px solid var(--rule)}
+footer .wrap{
+  padding-block:2rem;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+  display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;
+}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:40rem){
+  .sec{padding-block:2.75rem}
+  .hero{padding-block:3rem}
+  .item{grid-template-columns:1fr;gap:.5rem}
+  .panel{padding:1.4rem}
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mast-name">Danielle McCurdy, MBA<span>Fractional Finance Transformation &amp; Controls</span></div>
+    <nav class="mast-nav">
+      <a href="#help">What I do</a>
+      <a href="#record">Track record</a>
+      <a href="#compliance">Workforce compliance</a>
+      <a href="#engage">How to engage</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">London &middot; UK and US engagements</p>
+    <h1>Finance that holds up to scrutiny.</h1>
+    <p class="lede">I join growing, listed and PE-backed businesses as a fractional member of the finance leadership team. ERP programmes taken through go-live, controls that survive an audit, and a finance team that can run the new process once I leave. Usually one to two days a week.</p>
+    <div class="actions">
+      <a class="btn" href="#contact">Start a conversation</a>
+      <a class="btn ghost" href="#help">See what I do</a>
+    </div>
+    <div class="creds">
+      <span>Nearly 20 years</span>
+      <span>PwC &amp; Grant Thornton trained</span>
+      <span>Euronext and NASDAQ environments</span>
+      <span>MBA</span>
+      <span>Outside IR35</span>
+    </div>
+  </div>
+</section>
+
+<section id="help">
+  <div class="wrap sec">
+    <p class="eyebrow">How I can help</p>
+    <p class="lede">Three things businesses usually call me for. Most engagements start with one and widen.</p>
+    <div class="cols">
+      <div class="col">
+        <h3>Controls and compliance</h3>
+        <ul>
+          <li>Internal audit frameworks</li>
+          <li>SOX programme design and delivery</li>
+          <li>Risk assessment and ERM</li>
+          <li>IPO and audit readiness</li>
+          <li>Control deficiency remediation</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Finance transformation</h3>
+        <ul>
+          <li>ERP selection and implementation</li>
+          <li>Target operating model</li>
+          <li>Process redesign and SOPs</li>
+          <li>Finance PMO and governance</li>
+          <li>Post-acquisition integration</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Finance operations</h3>
+        <ul>
+          <li>Shared services design and build</li>
+          <li>Finance operations manuals</li>
+          <li>Close acceleration and reporting</li>
+          <li>Systems and workflow improvement</li>
+          <li>Board and stakeholder reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap sec">
+    <p class="eyebrow">Track record</p>
+    <div class="record">
+      <div class="item">
+        <h3>Banijay UK<span>Euronext Amsterdam listed</span></h3>
+        <p>Led the enterprise ERP programme from RFP and vendor selection through the Sage to SAP migration and go-live, including the finance data migration. Built the Finance PMO and integrated newly acquired labels into group reporting without breaking continuity.</p>
+      </div>
+      <div class="item">
+        <h3>Bed Bath &amp; Beyond and Cost Plus World Market<span>NASDAQ listed</span></h3>
+        <p>Owned the SOX compliance programme for seven years with zero financial statement issues, and saved $500k a year by insourcing the internal audit and SOX function.</p>
+      </div>
+      <div class="item">
+        <h3>PwC Middle East<span>Risk assurance</span></h3>
+        <p>Senior Manager. SOX-aligned controls documentation, internal audit and IPO readiness for US-listed clients across the UAE, plus the regional risk assurance strategy.</p>
+      </div>
+      <div class="item">
+        <h3>Grant Thornton<span>UK, USA and Australia</span></h3>
+        <p>Business advisory and business improvement across three countries, including the finance operations manual for a shared services function aligned to a new finance system.</p>
+      </div>
+      <div class="item">
+        <h3>Current engagements<span>Since February 2025</span></h3>
+        <p>Concurrent client work through Danielle McCurdy Consulting Ltd for US not-for-profits in the education sector and a US not-for-profit providing accounting services, covering controls uplift, process documentation, reconciliation redesign and audit readiness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compliance">
+  <div class="wrap sec">
+    <p class="eyebrow">Workforce compliance</p>
+    <h2 style="font-size:clamp(1.5rem,4vw,2rem);max-width:30rem;line-height:1.15">Menopause action plans and gender pay gap reporting</h2>
+    <div class="panel">
+      <p>From April 2026, employers with 250 or more staff can publish a menopause action plan voluntarily alongside their gender pay gap data. From spring 2027 it becomes a legal requirement under the Employment Rights Act 2025, with at least one action drawn from the menopause category and one from the gender pay gap categories.</p>
+      <p>Most employers in that bracket have no plan, no named owner, and no governance behind the figures they already publish. I build the plan, the reporting process and the evidence trail behind it, which is the same controls discipline applied to workforce data rather than financial data.</p>
+      <p>The coaching credentials sit alongside the finance background, so the content of the plan stands up as well as the process around it:</p>
+      <ul class="certs">
+        <li><b>Certified Menopause Coach</b>, Menopause Movement UK</li>
+        <li><b>Integrative Nutrition Health Coach</b>, Institute for Integrative Nutrition</li>
+        <li><b>Certified Life Coach</b>, The Life Coach School, USA</li>
+        <li><b>ADHD Works Coach</b>, ADHD Works UK</li>
+      </ul>
+      <p class="who">For UK employers of roughly 250 to 500 staff, preparing ahead of 2027</p>
+    </div>
+  </div>
+</section>
+
+<section id="engage">
+  <div class="wrap sec">
+    <p class="eyebrow">How to engage</p>
+    <p class="lede">Three models, depending on whether you need ongoing seniority, a defined piece of work, or cover for a period.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Fractional retainer</h3>
+        <p>One day a week, ongoing. Senior finance leadership without carrying a full-time hire. Two days a week scales from &pound;6,000.</p>
+        <p class="price">From &pound;3,500 / month</p>
+      </div>
+      <div class="tier">
+        <h3>Fixed-fee project</h3>
+        <p>Defined scope: A controls review, SOX readiness assessment, ERP advisory, or a finance operations review.</p>
+        <p class="price">Quoted by project</p>
+      </div>
+      <div class="tier">
+        <h3>Interim engagement</h3>
+        <p>Full time for a defined period. A transformation sprint, go-live support, or cover while you recruit.</p>
+        <p class="price">Day rate on request</p>
+      </div>
+    </div>
+    <p class="note">Engaged through Danielle McCurdy Consulting Ltd, outside IR35. Remote first, with on-site time where the programme needs it.</p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap sec">
+    <p class="eyebrow">How I work</p>
+    <p class="lede" style="color:var(--ink);font-size:1.08rem">I work hands-on rather than from a slide deck. I build the bottom-up plan and the status reporting, design the to-be processes, and stay close to UAT and cutover, so leadership can see where the programme really stands and the finance team owns the process after go-live.</p>
+    <p class="note">American, London-based for eight years, which brings SOX and US GAAP depth alongside UK statutory reporting. MBA in international business and finance. Certified Scrum Master. Fluent Spanish.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap sec">
+    <p class="eyebrow">Contact</p>
+    <h2 style="font-size:clamp(1.5rem,4vw,2rem);max-width:28rem;line-height:1.15">Tell me where the programme is stuck.</h2>
+    <p class="lede" style="margin-top:1rem">If I am not the right person for it, I will say so and point you at someone who is.</p>
+    <div class="lines">
+      <div class="line">
+        <span class="k">Email</span>
+        <span class="v" id="email">daniellemccurdy@gmail.com</span>
+        <button id="copy" type="button">Copy</button>
+      </div>
+      <div class="line">
+        <span class="k">LinkedIn</span>
+        <span class="v"><a href="https://www.linkedin.com/in/daniellemccurdymba">linkedin.com/in/daniellemccurdymba</a></span>
+      </div>
+      <div class="line">
+        <span class="k">Based</span>
+        <span class="v">London, working with UK and US clients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Danielle McCurdy Consulting Ltd</span>
+    <span>London</span>
+    <span>Outside IR35</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy');
+  var email=document.getElementById('email');
+  if(!btn||!email)return;
+  btn.addEventListener('click',function(){
+    var text=email.textContent.trim();
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1800);};
+    var fallback=function(){
+      try{
+        var r=document.createRange();r.selectNodeContents(email);
+        var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+        btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy';},1800);
+      }catch(e){}
+    };
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done,fallback);
+      }else{fallback();}
+    }catch(e){fallback();}
+  });
+})();
+</script>
